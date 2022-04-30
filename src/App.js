@@ -1,18 +1,13 @@
 import './App.css';
-import useJsonFetch from "./hooks/useJsonFetch";
-
-function ErrorComponent() {
-  const [data, error, loading] = useJsonFetch('http://localhost:7070/error');
-  return (
-  {data.status}
-  )
-}
+import WithJsonFetch from "./components/WithJsonFetch";
 
 function App() {
 
   return (
     <>
-      <ErrorComponent />
+      <WithJsonFetch url="http://localhost:7070/data" />
+      <WithJsonFetch url="http://localhost:7070/error" />
+      <WithJsonFetch url="http://localhost:7070/loading" />
     </>
   );
 }
